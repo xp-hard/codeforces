@@ -17,13 +17,14 @@ way = []
 cing = bag[-1][-1]
 i, j =  n, m
 while 1:
-    print(bag[i][j])
+    print(bag[i][j], i, j)
     if bag[i][j] == 1:
         break
     if i - 1 > 0 and bag[i - 1][j] == bag[i][j]:
         i -= 1
     else:
         for k in range(n):
+            print(i, j - l[k])
             if j - l[k] > 0 and bag[i][j - l[k]] == bag[i][j] - 1:
                 way.append(l[k])
                 j -= l[k]
