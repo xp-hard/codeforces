@@ -9,23 +9,23 @@ for i in range(1, n + 1):
             bag[i][j] = bag[i - 1][j]
             if j + l[i - 1] <= m:
                 bag[i][j + l[i - 1]] = bag[i][j] + 1
-for i in range(1, n + 1):
+"""for i in range(1, n + 1):
     for j in range(1, m + 1):
         print(bag[i][j], end=' ')
-    print()
+    print()"""
 way = []
 cing = bag[-1][-1]
 i, j =  n, m
 while 1:
-    print(bag[i][j], i, j)
-    if bag[i][j] == 1:
+    #print(bag[i][j], i, j)
+    if bag[i][j] == 0:
         break
-    if i - 1 > 0 and bag[i - 1][j] == bag[i][j]:
+    if i - 1 > 0 and bag[i - 1][j]:
         i -= 1
     else:
         for k in range(n):
-            print(i, j - l[k])
-            if j - l[k] > 0 and bag[i][j - l[k]] == bag[i][j] - 1:
+            #print(l[k], end=' ')
+            if j - l[k] >= 0 and bag[i][j - l[k]] == bag[i][j] - 1:
                 way.append(l[k])
                 j -= l[k]
-print(way)
+print(*reversed(way))
