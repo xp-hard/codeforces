@@ -1,9 +1,8 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
 int main(){
-    unsigned long long
+    cout << "Hello world";
     return 0;
 }
